@@ -204,7 +204,7 @@
             }
             $.ajax({
                 type:'get',
-                url:'http://map_2.test/buildings/delete_one_building',
+                url:'http://map_3.test/buildings/delete_one_building',
                 data:parms,
                 success:function(response) {
                     console.log('delete'+response);
@@ -232,7 +232,7 @@
             }
             $.ajax({
                 type:'get',
-                url:'http://map_2.test/buildings/edit_one_building',
+                url:'http://map_3.test/buildings/edit_one_building',
                 data:parms,
                 success:function(response) {
                     console.log('update'+response);
