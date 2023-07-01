@@ -26,3 +26,28 @@
 - run : `php artisan serve`
 
 - Best of luck 
+
+CREATE TABLE `buildings` (
+`id` int NOT NULL,
+`building_no` varchar(10) DEFAULT NULL,
+`street_no` varchar(10) DEFAULT NULL,
+`citizen_name` varchar(50) DEFAULT NULL,
+`citizen_id` varchar(10) DEFAULT NULL,
+`floors_count` int DEFAULT NULL,
+`latitude` varchar(20) DEFAULT NULL,
+`longitude` varchar(20) DEFAULT NULL,
+`created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+`updated` timestamp NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `citizens` (
+`id` int NOT NULL,
+`resident_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+`building_id` int NOT NULL,
+`citizen_status` varchar(30) NOT NULL,
+`floor` int DEFAULT NULL,
+`created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+`updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
