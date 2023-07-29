@@ -3,6 +3,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
           integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
           crossorigin=""/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
 
     <style>
         table {
@@ -12,21 +13,23 @@
         }
 
         td, th {
-            border: 1px solid #ffffff;
+            border: 1px solid #dddddd;
             text-align: left;
             padding: 8px;
         }
 
         tr:nth-child(even) {
-            background-color: #ffffff;
+            background-color: #dddddd;
         }
     </style>
 
 @endsection
 @section('page_content')
 
+
+
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-4">
             <div class="card">
                 <div class="card-header"> Map</div>
                 <div class="card-body">
@@ -85,7 +88,7 @@
         </div>
 
 
-        <div class="col-md-7">
+        <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Building Table</div>
                 <div class="card-body">
@@ -97,6 +100,8 @@
                                 <th  scope="col">Street</th>
                                 <th  scope="col">Owner</th>
                                 <th  scope="col">Floors</th>
+                                <th  scope="col">latitude</th>
+                                <th  scope="col">longitude</th>
 
                                 <th  scope="col">Actions</th>
                             </tr>
@@ -110,6 +115,9 @@
                                 <td>{{$buildings->street_no}}</td>
                                 <td>{{$buildings->citizen_name}}</td>
                                 <td>{{$buildings->floors_count}}</td>
+
+                            <td>{{$buildings->latitude}}</td>
+                            <td>{{$buildings->longitude}}</td>
                                 <td>
                                     <button type="button" class="btn btn-warning" onclick="edit_building('{{$buildings->id}}')">Edit</button>
                                     <button type="button" class="btn btn-danger" onclick="delete_building('{{$buildings->id}}')">Delete</button>
@@ -118,14 +126,13 @@
                         @endforeach
                         </tbody>
                     </table>
-
-
-
-
                 </div>
             </div>
 
         </div>
+
+
+
 
 
 
@@ -201,7 +208,7 @@
             }
             $.ajax({
                 type:'get',
-                url:'http://map_3.test/buildings/delete_one_building',
+                url:'http://map_2.test/buildings/delete_one_building',
                 data:parms,
                 success:function(response) {
                     console.log('delete'+response);
@@ -229,7 +236,7 @@
             }
             $.ajax({
                 type:'get',
-                url:'http://map_3.test/buildings/edit_one_building',
+                url:'http://map_2.test/buildings/edit_one_building',
                 data:parms,
                 success:function(response) {
                     console.log('update'+response);

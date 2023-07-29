@@ -24,6 +24,9 @@
 - run : `php artisan key:generate`
 - run : `php artisan migrate:fresh --seed`
 - run : `php artisan serve`
+- `npm run dev`
+- `npm install`
+- 
 
 - Best of luck 
 

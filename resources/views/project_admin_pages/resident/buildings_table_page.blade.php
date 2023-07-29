@@ -192,7 +192,7 @@
             }
             $.ajax({
                 type:'get',
-                url:'http://map_3.test/resident/delete_one_resident',
+                url:'http://map_2.test/resident/delete_one_resident',
                 data:parms,
                 success:function(response) {
                     console.log('delete'+response);
@@ -219,7 +219,7 @@
             }
             $.ajax({
                 type:'get',
-                url:'http://map_3.test/resident/edit_one_resident',
+                url:'http://map_2.test/resident/edit_one_resident',
                 data:parms,
                 success:function(response) {
                     console.log('update'+response);

@@ -20,13 +20,18 @@
         tr:nth-child(even) {
             background-color: #ffffff;
         }
+
+         .cards .card {
+             margin-left: 50px;
+         }
+
     </style>
 
 @endsection
 @section('page_content')
 
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header"> Map</div>
                 <div class="card-body">
@@ -84,8 +89,35 @@
             </div>
         </div>
 
+        <div class="col-md-12">
 
-        <div class="col-md-7">
+            <div class="cards">
+                <div class="card">
+                    <h2>Title 1</h2>
+                    <p>This is card 1.</p>
+                </div>
+                <div class="card">
+                    <h2>Title 2</h2>
+                    <p>This is card 2.</p>
+                </div>
+                <div class="card">
+                    <h2>Title 3</h2>
+                    <p>This is card 3.</p>
+                </div>
+                <div class="card">
+                    <h2>Title 4</h2>
+                    <p>This is card 4.</p>
+                </div>
+            </div>
+
+
+
+
+            </div>
+
+        </div>
+
+        <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Building Table</div>
                 <div class="card-body">
@@ -99,6 +131,8 @@
                                 <th  scope="col">Floors</th>
                                 <th  scope="col">resident_name</th>
                                 <th  scope="col">Status</th>
+                                <th  scope="col">latitude</th>
+                                <th  scope="col">longitude</th>
                                 <th  scope="col">Actions</th>
                             </tr>
                         </thead>
@@ -113,8 +147,10 @@
                                 <td>{{$buildings->floors_count}}</td>
                                 <td>{{$buildings->resident_name}}</td>
                                 <td>{{$buildings->citizen_status}}</td>
+                            <td>{{$buildings->latitude}}</td>
+                            <td>{{$buildings->longitude}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" onclick="edit_building('{{$buildings->id}}')">Edit</button>
+{{--                                    <button type="button" class="btn btn-warning" onclick="edit_building('{{$buildings->id}}')">Edit</button>--}}
                                     <button type="button" class="btn btn-danger" onclick="delete_building('{{$buildings->id}}')">Delete</button>
                                 </td>
                         </tr>
@@ -204,7 +240,7 @@
             }
             $.ajax({
                 type:'get',
-                url:'http://map_3.test/buildings/delete_one_building',
+                url:'http://map_2.test/buildings/delete_one_building',
                 data:parms,
                 success:function(response) {
                     console.log('delete'+response);
@@ -232,7 +268,7 @@
             }
             $.ajax({
                 type:'get',
-                url:'http://map_3.test/buildings/edit_one_building',
+                url:'http://map_2.test/buildings/edit_one_building',
                 data:parms,
                 success:function(response) {
                     console.log('update'+response);
